@@ -45,13 +45,13 @@ def carica(tmp,delay):
  
 print 'YOUR FULL NAME: %s'% client.CurrentUser.FullName
 print 'YOUR CONTACTS:'
-cont = []
+
 for f in client.Friends:
   if f.OnlineStatus == 'ONLINE':
     print '\033[1;41mFull name: \033[1;m', '\033[1;34m %s \033[1;m'% f.FullName
     print '\033[1;42mStatus:\033[1;m','\033[1;34m %s \033[1;m'% f.OnlineStatus
     print '\033[1;43mContry: \033[1;m','\033[1;34m %s \033[1;m\n'% f.Country
-    cont.append(f.FullName)
+
     
 
 try:
@@ -65,13 +65,7 @@ while message != 'exit' or message != 'EXIT':
   if message == 'exit' or message == 'EXIT':
     break
   if message == '#chusr':
-    s = raw_input('Skype Name:')
-    for t in cont:
-      if t == s:
-        users = s
-        break
-    if s != users:
-      print 'Contact is not ONLINE or is not present in your contacts list'
+    users = raw_input('Skype Name:')
   if message[0] != '#':
    client.SendMessage(users,message)
    print 'message sended'
