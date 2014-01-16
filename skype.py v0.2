@@ -1,3 +1,4 @@
+'
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 #
@@ -79,6 +80,14 @@ message = ' '
 while message != '#exit' or message != '#EXIT': 
   message = raw_input("\033[1;44mYOU: \033[1;m\n>>  ")
   
+  # Controll che command to exit from the programm
+  if message == 'exit' or message == 'EXIT':
+    risp = raw_input("-->Do you want to exit? [S/n]")
+    if risp == 'S' or risp == 's':
+      message = '#exit'
+    else:
+      message ='#'
+  
   if message == '#exit' or message == '#EXIT':
     break
   
@@ -117,6 +126,9 @@ while message != '#exit' or message != '#EXIT':
   if message == '#clr':
     client.ClearChatHistory()
     print 'History cleared'
+    
+  if message == '#callit':
+    client.PlaceCall(user)
 
   # Print the list of the OFFLINE contacts
   if message == '#s.off':
@@ -134,3 +146,4 @@ while message != '#exit' or message != '#EXIT':
 
 
 print 'GoodBye'
+
