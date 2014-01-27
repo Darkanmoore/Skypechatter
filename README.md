@@ -2,7 +2,7 @@ Skypechatter
 ============
 It is a simple programm that plays skype chat on linux terminal. 
 Dependence:
-Skype
+Skype, 
 skype4py library
 
 Skypechat.py
